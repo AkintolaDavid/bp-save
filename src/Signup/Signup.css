@@ -1,0 +1,367 @@
+.signup_main {
+  width: 100vw;
+  height: auto;
+  justify-content: center; /* Center horizontally */
+  align-items: center;
+  padding-bottom: 30px;
+}
+.signup_backarrow {
+  margin-left: 20px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-size: 40px;
+}
+.signup_main_container {
+  padding-bottom: 30px;
+  background-color: #addcee;
+  width: 380px;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+  border-radius: 40px;
+}
+.signup_text {
+  margin-top: 50px;
+  font-size: 25px;
+  font-weight: 600;
+}
+.signup_firstname {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+.signup_lastname {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.signup_phone_number {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.signup_email {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.signup_firstname_input {
+  margin-top: 10px;
+  border-radius: 20px;
+  height: 40px;
+  width: 300px;
+  padding-left: 10px;
+  border: none;
+  border: none;
+}
+
+.signup_lastname_input {
+  margin-top: 10px;
+  border-radius: 20px;
+  height: 40px;
+  width: 300px;
+  padding-left: 10px;
+  border: none;
+}
+.signup_phone_number_input {
+  margin-top: 10px;
+  height: 40px;
+  width: 300px;
+
+  border-radius: 20px;
+  padding-left: 10px;
+  border: none;
+}
+.signup_email_input {
+  margin-top: 10px;
+  height: 40px;
+  width: 300px;
+
+  border-radius: 20px;
+  padding-left: 10px;
+  border: none;
+}
+.signup_password {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+.signup_confirm_password {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+.signup_password_input {
+  margin-top: 10px;
+  height: 40px;
+  width: 300px;
+
+  border-radius: 20px;
+  padding-left: 10px;
+  border: none;
+}
+.signup_height input {
+  height: 40px;
+  width: 300px;
+  margin-top: 10px;
+  border-radius: 20px;
+  padding-left: 10px;
+  border: none;
+}
+.signup_weight input {
+  height: 40px;
+  width: 300px;
+  margin-top: 10px;
+  border-radius: 20px;
+  padding-left: 10px;
+  border: none;
+}
+.signup_gender {
+  margin-top: 20px;
+}
+.signup_age {
+  display: flex;
+  margin-top: 20px;
+}
+.signup_age select {
+  margin-left: 30px;
+  border-radius: 20px;
+  padding-left: 10px;
+  border: none;
+  width: 150px;
+  height: 40px;
+}
+.signup_birth {
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin-top: 20px;
+}
+.signup_birth input {
+  height: 40px;
+  width: 300px;
+  border-radius: 20px;
+  padding-left: 7px;
+  padding-right: 7px;
+  border: none;
+}
+.signup_height {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+.signup_weight {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+.signup_confirm_password_input {
+  height: 40px;
+  width: 300px;
+  margin-top: 10px;
+  border-radius: 20px;
+  padding-left: 10px;
+  border: none;
+}
+.submit_signup_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.submit_signup {
+  height: 40px;
+  width: 200px;
+  margin-top: 20px;
+  border-radius: 20px;
+  border: none;
+  font-size: 17px;
+  font-weight: 500;
+}
+.signup_agree {
+  margin-top: 30px;
+}
+.agree_text {
+  font-size: 17px;
+  font-weight: 500;
+}
+@media (min-width: 1px) and (max-width: 400px) {
+  .signup_main {
+    width: 100vw;
+    height: auto;
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+    padding-bottom: 30px;
+  }
+  .signup_backarrow {
+    margin-left: 20px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 25px;
+  }
+  .signup_main_container {
+    background-color: #addcee;
+    width: 300px;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 40px;
+  }
+  .signup_text {
+    margin-top: 40px;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .signup_firstname {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+  }
+  .signup_firstname span {
+    margin-left: 17px;
+  }
+  .signup_firstname_input {
+    border-radius: 20px;
+    height: 35px;
+    margin-left: 15px;
+    width: 250px;
+    padding-left: 10px;
+    border: none;
+    border: none;
+  }
+  .signup_lastname span {
+    margin-left: 17px;
+  }
+  .signup_lastname_input {
+    border-radius: 20px;
+    height: 35px;
+    margin-left: 15px;
+    width: 250px;
+    padding-left: 10px;
+    border: none;
+  }
+  .signup_phone_number span {
+    margin-left: 17px;
+  }
+  .signup_phone_number_input {
+    height: 35px;
+    margin-left: 15px;
+    width: 250px;
+
+    border-radius: 20px;
+    padding-left: 10px;
+    border: none;
+  }
+  .signup_email span {
+    margin-left: 17px;
+  }
+  .signup_email_input {
+    height: 35px;
+    margin-left: 15px;
+    width: 250px;
+
+    border-radius: 20px;
+    padding-left: 10px;
+    border: none;
+  }
+  .signup_height span {
+    margin-left: 17px;
+  }
+  .signup_height input {
+    height: 35px;
+
+    width: 250px;
+    margin-left: 15px;
+  }
+  .signup_weight span {
+    margin-left: 17px;
+  }
+  .signup_weight input {
+    height: 35px;
+
+    width: 250px;
+    margin-left: 15px;
+  }
+  .signup_gender {
+    margin-top: 20px;
+    margin-left: 15px;
+  }
+  .signup_age {
+    display: flex;
+    /* margin-top: 20px; */
+    margin: 20px 20px;
+    font-size: 16px;
+  }
+  .signup_age select {
+    margin-left: 17px;
+    border-radius: 20px;
+    padding-left: 10px;
+    border: none;
+    width: 130px;
+    height: 35px;
+  }
+  .signup_birth {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    margin-left: 17px;
+    width: 250px;
+    margin-top: 20px;
+  }
+  .signup_birth input {
+    width: 245px;
+    height: 35px;
+  }
+  .signup_password span {
+    margin-left: 17px;
+  }
+  .signup_password_input {
+    height: 35px;
+    margin-left: 15px;
+    width: 250px;
+
+    border-radius: 20px;
+    padding-left: 10px;
+    border: none;
+  }
+  .signup_confirm_password span {
+    margin-left: 17px;
+  }
+  .signup_confirm_password_input {
+    height: 35px;
+    margin-left: 15px;
+    width: 250px;
+
+    border-radius: 20px;
+    padding-left: 10px;
+    border: none;
+  }
+  .submit_signup_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .submit_signup {
+    height: 30px;
+    width: 150px;
+    margin-top: 20px;
+    border-radius: 20px;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .signup_agree {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+  }
+  .agree_text {
+    font-size: 13px;
+    font-weight: 500;
+  }
+}

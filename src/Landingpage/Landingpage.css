@@ -1,0 +1,12 @@
+.container {
+  display: grid;
+  grid-template-columns: 25% 75%;
+  height: 100vh; /* Adjust the height as needed */
+}
+@media (max-width: 640px) {
+  .container {
+    display: grid;
+    grid-template-columns: 13% 87%;
+    height: 100vh; /* Adjust the height as needed */
+  }
+}
