@@ -8,12 +8,20 @@ import "./Signup.css";
 export const Signup = () => {
   const [users, setUsers] = useState([]);
   const { updateUserWeight, userWeight } = useContext(ShopContext);
+  const storedToken = localStorage.getItem("token");
   const navigate = useNavigate();
   useEffect(() => {
     const fetchUsers = async () => {
       const response = await fetch(
-        "https://bp-server-1.onrender.com/api/users"
-      ); // Replace with actual route if created
+        "https://bp-server-1.onrender.com/api/users",
+        // "/api/users",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       const fetchedUsers = await response.json();
       setUsers(fetchedUsers);
     };
@@ -67,9 +75,10 @@ export const Signup = () => {
     }
 
     // Check if phone number is already in use
-    const existingUser = users.find(
-      (user) => user.phoneNumber === formData.phoneNumber
-    );
+    const existingUser =
+      Array.isArray(users) &&
+      users.find((user) => user.phoneNumber === formData.phoneNumber);
+
     if (existingUser) {
       alert("Phone number is already in use");
       return;
@@ -78,6 +87,7 @@ export const Signup = () => {
     try {
       const response = await fetch(
         "https://bp-server-1.onrender.com/api/signup",
+        // "/api/signup",
         {
           method: "POST",
           headers: {

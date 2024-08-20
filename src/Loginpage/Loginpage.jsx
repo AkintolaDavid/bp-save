@@ -27,14 +27,21 @@ export const Loginpage = () => {
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  const storedToken = localStorage.getItem("yourTokenKey");
+  const storedToken = localStorage.getItem("token");
   const handleLogin = async () => {
+    if (!phoneNumber || !password) {
+      alert("Phone number and password are required");
+      return;
+    }
+
     try {
       const response = await fetch(
         "https://bp-server-1.onrender.com/api/signin",
         {
           method: "POST",
-          headers: { Authorization: `Bearer ${storedToken}` },
+          headers: {
+            "Content-Type": "application/json",
+          },
           body: JSON.stringify({ phoneNumber, password }),
         }
       );
@@ -43,12 +50,15 @@ export const Loginpage = () => {
         const userData = await response.json();
         localStorage.setItem("token", userData.accessToken);
         console.log("Token stored:", userData.accessToken);
-        const fullName = userData.firstName + " " + userData.lastName;
-        const usersweight = userData.weight;
+
+        const fullName = `${userData.firstName} ${userData.lastName}`;
+        const usersWeight = userData.weight;
+
         console.log(fullName);
-        console.log(usersweight);
+        console.log(usersWeight);
+
         updateUserFullName(fullName.toUpperCase());
-        updateUserWeight(usersweight);
+        updateUserWeight(usersWeight);
 
         navigate("/landingpage");
       } else {
@@ -59,6 +69,7 @@ export const Loginpage = () => {
       alert("Error during login:", error);
     }
   };
+
   return (
     <>
       {isMobile ? (
