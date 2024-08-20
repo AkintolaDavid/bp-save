@@ -2,11 +2,12 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { IoArrowBack } from "react-icons/io5";
-
+import { ShopContext } from "../Context/ShopContext";
+import { useContext } from "react";
 import "./Signup.css";
 export const Signup = () => {
   const [users, setUsers] = useState([]);
-
+  const { updateUserWeight, userWeight } = useContext(ShopContext);
   const navigate = useNavigate();
   useEffect(() => {
     const fetchUsers = async () => {
@@ -96,6 +97,7 @@ export const Signup = () => {
   const handleGoBack = () => {
     navigate("/"); // Go back to Course Display
   };
+
   return (
     <div className="signup_main">
       <div>

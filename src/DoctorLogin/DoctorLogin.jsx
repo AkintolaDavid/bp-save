@@ -33,6 +33,7 @@ export const DoctorLogin = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
   const handleLogin = (e) => {
+    console.log("id: doctor123, password: password1");
     e.preventDefault(); // Prevent default form submission behavior
 
     const matchingDoctor = dummyDoctors.find(
@@ -48,51 +49,58 @@ export const DoctorLogin = () => {
       alert("Invalid Doctor ID or password!");
     }
   };
+
   return (
     <>
       {isMobile ? (
-        <div className="mobile_main_container">
-          <div className="mobile_itga">
-            <span className="welcome_itga"> Doctor Sign In</span>
+        <>
+          {" "}
+          <div style={{ justifyContent: "left", backgroundColor: "" }}>
+            <IoArrowBack className="signup_backarrow" onClick={handleGoBack} />
           </div>
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <span className="DoctorLogin_username">DOCTOR ID</span>
-            <input
-              type="text"
-              placeholder="Doctor ID"
-              className="DoctorLogin_password_input"
-              onChange={(e) => setdoctorId(e.target.value)}
-            />
-          </div>
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <span className="DoctorLogin_password">PASSWORD</span>
-            <div className="DoctorLogin_password_input">
+          <div className="mobile_main_container">
+            <div className="mobile_itga">
+              <span className="welcome_itga"> Doctor Loginpage</span>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <span className="DoctorLogin_username">DOCTOR ID</span>
               <input
-                type={isPasswordVisible ? "text" : "password"}
-                placeholder="password"
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              <MdRemoveRedEye
-                onClick={togglePasswordVisibility}
-                style={{ fontSize: "20px" }}
+                type="text"
+                placeholder="Doctor ID"
+                className="DoctorLogin_password_input"
+                onChange={(e) => setdoctorId(e.target.value)}
               />
             </div>
-          </div>
-          <div className="submit_btn">
-            <button className="submit_signin" onClick={handleLogin}>
-              SIGN IN
-            </button>
-          </div>
-          <div className="remember_forget">
-            <div className="remember">
-              <input type="checkbox" />
-              <span className="remember_text">Remember Me</span>
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <span className="DoctorLogin_password">PASSWORD</span>
+              <div className="DoctorLogin_password_input">
+                <input
+                  type={isPasswordVisible ? "text" : "password"}
+                  placeholder="password"
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <MdRemoveRedEye
+                  onClick={togglePasswordVisibility}
+                  style={{ fontSize: "20px" }}
+                />
+              </div>
             </div>
-            <Link className="forgot-password-link" to="/forgot-password">
-              Forgot Password?
-            </Link>
+            <div className="submit_btn">
+              <button className="submit_signin" onClick={handleLogin}>
+                SIGN IN
+              </button>
+            </div>
+            <div className="remember_forget">
+              <div className="remember">
+                <input type="checkbox" />
+                <span className="remember_text">Remember Me</span>
+              </div>
+              <Link className="forgot-password-link" to="/forgot-password">
+                Forgot Password?
+              </Link>
+            </div>
           </div>
-        </div>
+        </>
       ) : (
         <>
           <div style={{ justifyContent: "left", backgroundColor: "" }}>
@@ -105,7 +113,7 @@ export const DoctorLogin = () => {
             <div className="DoctorLogin_container">
               <div className="doc_signup_container"></div>
               <div className="doc_signin_container">
-                <span className="DoctorLogin_signin">Doctor Sign In</span>
+                <span className="DoctorLogin_signin">Doctor Loginpage</span>
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <span className="DoctorLogin_username">DOCTOR ID</span>
                   <input

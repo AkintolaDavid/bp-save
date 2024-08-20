@@ -75,7 +75,7 @@ export const Sidebar = () => {
       ) : (
         <>
           <div className="sidebar">
-            <h2>Omron</h2>
+            <h2>BP SAVE</h2>
             <div>
               <div className="sidebar_con">
                 <HiHome />

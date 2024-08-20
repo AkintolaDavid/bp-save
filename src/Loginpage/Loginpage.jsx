@@ -40,9 +40,11 @@ export const Loginpage = () => {
         localStorage.setItem("token", userData.accessToken);
         console.log("Token stored:", userData.accessToken);
         const fullName = userData.firstName + " " + userData.lastName;
+        const usersweight = userData.weight;
         console.log(fullName);
+        console.log(usersweight);
         updateUserFullName(fullName.toUpperCase());
-        updateUserWeight(userData.userWeight);
+        updateUserWeight(usersweight);
 
         navigate("/landingpage");
       } else {

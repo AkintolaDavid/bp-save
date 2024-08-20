@@ -13,12 +13,13 @@ import { useDisclosure } from "@chakra-ui/react";
 import { ShopContext } from "../Context/ShopContext";
 export const Content = () => {
   const { userFullName, userWeight } = useContext(ShopContext);
-  const [weight] = useState(userWeight);
+
+  // const [weight] = useState(userWeight);
   const [goalWeight, setGoalWeight] = useState(
     localStorage.getItem("goalWeight") || "--"
   );
   const [lastWeight, setLastWeight] = useState(
-    localStorage.getItem("lastWeight") || weight
+    localStorage.getItem("lastWeight") || userWeight
   );
   const [isGoalEditable, setIsGoalEditable] = useState(false);
   const [date] = useState(new Date().toLocaleDateString());
@@ -95,7 +96,7 @@ export const Content = () => {
     const formattedDate = today.toLocaleDateString("en-US", options); // Locale-specific formatting
     setCurrentDate(formattedDate); // Update state with formatted date
   }, []);
-  const progressPercentage = ((lastWeight - goalWeight) / lastWeight) * 100;
+  const progressPercentage = ((lastWeight - goalWeight) / userWeight) * 100;
   const finalRef = React.useRef(null);
   const [activeModal, setActiveModal] = useState(null); // Track currently active modal (notification or message)
   const notificationDisclosure = useDisclosure();
@@ -287,7 +288,10 @@ export const Content = () => {
       {showWeight && (
         <div className="weight_overall">
           <div className="currentreading">Current reading: {currentDate}</div>
-          <div className="weightdisplay">{lastWeight}kg</div>
+          <div className="weightdisplay">
+            {" "}
+            {lastWeight ? lastWeight : userWeight}kg
+          </div>
           <div className="weightcontainer">
             <div className="calculated_weight">
               <div className="goal_weight">
@@ -318,8 +322,10 @@ export const Content = () => {
                   <span>{goalWeight}kg</span> // Display current goal weight when not editing
                 )}
               </div>
-              <div className="last_reading_weight">{lastWeight}kg</div>
-              <div className="start_reading_weight">{weight}kg</div>
+              <div className="last_reading_weight">
+                {lastWeight ? lastWeight : userWeight}kg
+              </div>
+              <div className="start_reading_weight">{userWeight}kg</div>
             </div>
             <div className="text_reading">
               <div className="goal_text" onClick={goalhandler}>
