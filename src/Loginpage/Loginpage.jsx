@@ -27,13 +27,14 @@ export const Loginpage = () => {
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+  const storedToken = localStorage.getItem("yourTokenKey");
   const handleLogin = async () => {
     try {
       const response = await fetch(
         "https://bp-server-1.onrender.com/api/signin",
         {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: { Authorization: `Bearer ${storedToken}` },
           body: JSON.stringify({ phoneNumber, password }),
         }
       );
