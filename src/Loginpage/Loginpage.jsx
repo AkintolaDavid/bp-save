@@ -29,11 +29,14 @@ export const Loginpage = () => {
   }, []);
   const handleLogin = async () => {
     try {
-      const response = await fetch("/api/signin", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ phoneNumber, password }),
-      });
+      const response = await fetch(
+        "https://bp-server-1.onrender.com/api/signin",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ phoneNumber, password }),
+        }
+      );
 
       if (response.ok) {
         const userData = await response.json();

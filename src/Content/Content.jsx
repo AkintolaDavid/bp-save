@@ -65,14 +65,17 @@ export const Content = () => {
 
       console.log("Retrieved token:", token); // Debug log
 
-      const response = await fetch("/api/blood-pressure", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify(dataToSend),
-      });
+      const response = await fetch(
+        "https://bp-server-1.onrender.com/api/blood-pressure",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify(dataToSend),
+        }
+      );
 
       if (response.ok) {
         console.log("Blood pressure readings saved successfully!");
