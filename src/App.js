@@ -18,14 +18,14 @@ function App() {
           <Route path="/doctorlogin" element={<DoctorLogin />} />
           <Route path="/acc_setting" element={<Accsetting />} />
           <Route path="/profile" element={<Profile />} />
-          <Route
+          {/* <Route
             path="/protected"
             element={
               <PrivateRoute>
                 <ProtectedComponent />
               </PrivateRoute>
             }
-          />
+          /> */}
         </Routes>
       </BrowserRouter>
     </div>

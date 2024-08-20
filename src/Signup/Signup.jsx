@@ -10,24 +10,7 @@ export const Signup = () => {
   const { updateUserWeight, userWeight } = useContext(ShopContext);
   const storedToken = localStorage.getItem("token");
   const navigate = useNavigate();
-  useEffect(() => {
-    const fetchUsers = async () => {
-      const response = await fetch(
-        // "https://bp-server-1.onrender.com/api/users"
-        "/api/users"
-        // {
-        //   method: "GET",
-        //   headers: {
-        //     "Content-Type": "application/json",
-        //   },
-        // }
-      );
-      const fetchedUsers = await response.json();
-      setUsers(fetchedUsers);
-    };
 
-    fetchUsers();
-  }, []);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -42,7 +25,16 @@ export const Signup = () => {
     confirmPassword: "",
     agreeTerms: false,
   });
+  useEffect(() => {
+    const fetchUsers = async () => {
+      const phoneNumber = formData.phoneNumber; // or use a stored value
+      const response = await fetch(`/api/users?phoneNumber=${phoneNumber}`);
+      const fetchedUser = await response.json();
+      setUsers(fetchedUser.user ? [fetchedUser.user] : []);
+    };
 
+    fetchUsers();
+  }, [formData.phoneNumber]);
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -86,8 +78,8 @@ export const Signup = () => {
 
     try {
       const response = await fetch(
-        // "https://bp-server-1.onrender.com/api/signup",
-        "/api/signup",
+        "https://bp-server-1.onrender.com/api/signup",
+        // "/api/signup",
         {
           method: "POST",
           headers: {
