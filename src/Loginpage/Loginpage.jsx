@@ -27,7 +27,6 @@ export const Loginpage = () => {
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  const storedToken = localStorage.getItem("token");
   const handleLogin = async () => {
     if (!phoneNumber || !password) {
       alert("Phone number and password are required");
@@ -36,7 +35,8 @@ export const Loginpage = () => {
 
     try {
       const response = await fetch(
-        "https://bp-server-1.onrender.com/api/signin",
+        // "https://bp-server-1.onrender.com/api/signin",
+        "/api/signin",
         {
           method: "POST",
           headers: {
@@ -48,8 +48,6 @@ export const Loginpage = () => {
 
       if (response.ok) {
         const userData = await response.json();
-        localStorage.setItem("token", userData.accessToken);
-        console.log("Token stored:", userData.accessToken);
 
         const fullName = `${userData.firstName} ${userData.lastName}`;
         const usersWeight = userData.weight;

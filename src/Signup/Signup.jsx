@@ -13,14 +13,14 @@ export const Signup = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       const response = await fetch(
-        "https://bp-server-1.onrender.com/api/users",
-        // "/api/users",
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
+        // "https://bp-server-1.onrender.com/api/users"
+        "/api/users"
+        // {
+        //   method: "GET",
+        //   headers: {
+        //     "Content-Type": "application/json",
+        //   },
+        // }
       );
       const fetchedUsers = await response.json();
       setUsers(fetchedUsers);
@@ -86,8 +86,8 @@ export const Signup = () => {
 
     try {
       const response = await fetch(
-        "https://bp-server-1.onrender.com/api/signup",
-        // "/api/signup",
+        // "https://bp-server-1.onrender.com/api/signup",
+        "/api/signup",
         {
           method: "POST",
           headers: {
