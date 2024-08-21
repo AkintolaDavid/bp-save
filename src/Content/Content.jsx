@@ -252,6 +252,7 @@ export const Content = () => {
                           type="number"
                           value={systolic}
                           onChange={(e) => setSystolic(e.target.value)}
+                          autoFocus={false}
                         />
                       </div>
                     </div>

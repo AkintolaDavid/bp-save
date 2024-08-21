@@ -84,6 +84,7 @@
   }
 
   .submit_signin {
+    color: black;
     height: 50px;
     width: 500px;
     border-radius: 30px;
@@ -185,6 +186,7 @@
     flex-direction: column;
     align-items: center;
     margin-top: 80px;
+    background-color: white;
   }
   .mobile_itga {
     display: flex;
@@ -250,6 +252,7 @@
     margin-right: 10px;
   }
   .submit_signin {
+    color: black;
     height: 50px;
     width: 340px;
     border-radius: 30px;
